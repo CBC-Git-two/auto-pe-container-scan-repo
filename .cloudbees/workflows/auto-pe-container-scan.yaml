@@ -36,8 +36,8 @@ jobs:
   policy-evaluation:
     uses: cloudbees-io/policy-utils/evaluate-policy-context/workflow.yml@v2
     needs:
-    - download-and-evaluate
+    - checkout-and-evaluate
     with:
-      input-data: ${{ needs.download-and-evaluate.outputs.policy-subject }}
+      input-data: ${{ needs.checkout-and-evaluate.outputs.policy-subject }}
       checkpoint-type: workflow
       checkpoint-position: within
